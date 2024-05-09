@@ -1,0 +1,64 @@
+{
+    "REQUEST": {
+        "type": "REQUEST",
+        "message": "42",
+        "timestamp": "2019-11-06T14:00:00.000Z",
+        "client": "client ip"
+    },
+    "ORDER_REQ": {
+        "type": "ORDER_REQ",
+        "view": "<viewnum>",
+        "seq": "<sequence-number>",
+        "history": "<history>",
+        "message": "42",
+        "m": "<REQUEST>"
+    },
+    "SPEC_RESPONSE": {
+        "type": "SPEC_RESPONSE",
+        "view": "<viewnum>",
+        "seq": "<sequence-number>",
+        "history": "<history>",
+        "client": "client ip",
+        "timestamp": "2019-11-06T14:00:00.000Z",
+        "server": "server ip",
+        "reply": "response",
+        "OR": "<ORDER_REQ>"
+    },
+    "COMMIT_CERTIFICATE": {
+        "type": "COMMIT_CERTIFICATE",
+        "client": "client ip",
+        "view": "<viewnum>",
+        "seq": "<sequence-number>",
+        "OR":"<ORDER_REQ>",
+        "history":"<history> (we should actually send history here, but the last request message will suffice)",
+        "CC": "<not using this, assumption that no client is byzantine>"
+    },
+    "LOCAL_COMMIT": {
+        "type": "LOCAL_COMMIT",
+        "view": "<viewnum>",
+        "history": "<history>",
+        "server":"server ip",
+        "client":"client ip"
+    },
+    "MIS_MATCH": {
+        "type": "MIS_MATCH",
+        "view": "<viewnum>",
+        "seq": "<sequence-number>"
+    },
+    "HATE_PRIMARY": {
+        "type": "I_HATE_PRIMARY",
+        "view": "<viewnum>",
+        "server": "server ip"
+    },
+    "VIEW_CHANGE": {
+        "type": "VIEW_CHANGE",
+        "view": "<viewnum>",
+        "newview": "<new viewnum>",
+        "server": "server ip",
+        "history": "<history>"
+    },
+    "NEW_VIEW": {
+        "type": "NEW_VIEW",
+        "view": "<viewnum>"
+    }
+}
