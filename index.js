@@ -4,17 +4,20 @@ const asyncHandler = require('express-async-handler');
 const axios = require('axios');
 
 let nodeIPs = {
-    0: "localhost:3000",
-    1: "localhost:3001",
-    2: "localhost:3002",
-    3: "localhost:3003",
+    0: "192.168.25.110:3000",   // ccd087
+    1: "192.168.25.111:3000",   // ccd088
+    2: "192.168.25.112:3000",   // ccd089
+    3: "192.168.25.113:3000",   // ccd090
+    4: "192.168.25.121:3000",   // ccd098
+    5: "192.168.25.122:3000",   // ccd099
+    6: "192.168.25.123:3000",   // ccd100
 };           // dictionary to store the IP addresses of all the nodes
 let primaryNode = 0;        // primary node
 let currentView = 0;        // current view number
 
 const myID = process.argv[2];             // ID of the current node
 
-const isByzantine = process.argv[4] || false;      // boolean to check if the node is byzantine or not
+const isByzantine = process.argv[3] || false;      // boolean to check if the node is byzantine or not
 
 
 let logs = [];              // list for storing logs
@@ -511,7 +514,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const port = process.argv[3];
+const port = 3000;
 
 app.listen(port, () => {
     console.log(`App running on port ${port}.`);
