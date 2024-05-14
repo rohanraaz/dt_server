@@ -507,6 +507,10 @@ const getData = (req, res) => {
     res.status(200).json({ full_data });
 }
 
+const getmessageData = (req, res) => {
+    res.status(200).json({ messageData });
+}
+
 const getlogs = (req, res) => {
     res.status(200).json({ logs })
 }
@@ -526,6 +530,7 @@ app.listen(port, () => {
 app.post("/request", asyncHandler(receiveMessage));
 
 app.get("/testing/getData", asyncHandler(getData));
+app.get("/testing/getmessageData", asyncHandler(getmessageData));
 app.get("/testing/hello", (req, res) => {
     console.log("got a hello request");
     res.status(200).send("hello");
