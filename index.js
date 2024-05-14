@@ -64,6 +64,7 @@ function cleardata(dic) {
 
 
 let messageData = {};       // dictionary for storing final data
+let full_data = [];         // list for storing all the data for testing purposes
 let maxN = 0;               // variable to store the maximum value of N
 
 
@@ -312,6 +313,7 @@ const receiveMessage = async (req, res) => {
                 printingData();
 
                 cleardata(cache)
+                full_data.push(messageData)
                 cleardata(messageData)
                 cleardata(becomePrimary)
                 cleardata(hatered)
@@ -483,6 +485,7 @@ const receiveMessage = async (req, res) => {
                 printingData();
 
                 cleardata(cache)
+                full_data.push(messageData)
                 cleardata(messageData)
                 cleardata(becomePrimary)
                 cleardata(hatered)
