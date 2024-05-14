@@ -504,7 +504,7 @@ const receiveMessage = async (req, res) => {
 };
 
 const getData = (req, res) => {
-    res.status(200).json({ messageData });
+    res.status(200).json({ full_data });
 }
 
 const getlogs = (req, res) => {
