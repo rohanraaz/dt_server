@@ -24,7 +24,7 @@ let logs = [];              // list for storing logs
 
 let cache = {};            // dictionary for storing cache
 
-let f = 1;                // max number of faulty nodes
+let f = 2;                // max number of faulty nodes
 
 
 let becomePrimary = {};
